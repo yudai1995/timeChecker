@@ -1,39 +1,27 @@
 # timeChecker
 
-This template should help get you started developing with Vue 3 in Vite.
+## 概要
 
-## Recommended IDE Setup
+時間が範囲内かどうかをチェックする関数
+`src\utils\timeUtils.ts`内に実装している
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+### 言語
 
-## Type Support for `.vue` Imports in TS
+typescript
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### 判定例
 
-## Customize configuration
+- 5時が0~23時に含まれるか：含まれる
+- 5時が0~1時に含まれるか：含まれない
+- 0時が0~23時に含まれるか：含まれる
+- 23時が0~23時に含まれるか：含まれない
+- 23時が0~23時に含まれるか：含まれない
+- 1時が22~5時に含まれるか：含まれる
+- 9時が22~5時に含まれるか：含まれない
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## その他
 
-## Project Setup
+入力値に対して結果を確認するためのフロントエンドはvue.jsで実装している
 
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+以下はデプロイサイト
+https://time-checker-mu.vercel.app/
